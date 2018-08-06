@@ -14,15 +14,17 @@ row 1
 function printArray(arr){
     var result = '';
         if(arr.length != 0){
-             for(var k =0; k<arr.length; k++){
-                result = result + `row ${k}'\n'`;
+             for(var k =0; k < arr.length; k++){
+                result = result + `row ${k}\n`;
                  //console.log('row' + k + '\n');
-                 for(var i = 0; i< arr[k].length; i++){
-                    result = result + arr[k][i] + '\n'
+                 for(var i = 0; i< (arr[k].length); i++){
+                    result = result + `${arr[k][i]}\n`
                     //console.log(arr[k][i] + '\n');
-            
                 }
+                
              }
+            
+            //result[result.length -4] =`${arr[arr.length-1][arr.length-1]}`
             
         return result;
         } else if(arr.length == 0){
@@ -30,3 +32,6 @@ function printArray(arr){
     return `empty array` }
      }
     
+     var a = [[1, 2], [8, 11]];
+
+     console.log(printArray(a));

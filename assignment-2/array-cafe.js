@@ -25,3 +25,4 @@ function findNotBookedTables(arr){
 		return 'empty array'
 	}
 }
+
