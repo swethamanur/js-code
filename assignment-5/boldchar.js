@@ -20,6 +20,7 @@
 var sentence = 'if one word could encapsulate the essence of this historic city it would be drama start your day at the show stopping pantheon followed by a gelato at the acclaimed trevi fountain then hop between buzzing bars in vivacious trastevere'
 
 var arr = ['pantheon','trevi','trastevere'];
+
 function highlightLandmarks(sentence,arr){
 	if(arr.length > 0){
  	
@@ -33,4 +34,5 @@ function highlightLandmarks(sentence,arr){
 	}	
 	return sentence
 }
+
 console.log(highlightLandmarks(sentence,arr));
