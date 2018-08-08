@@ -8,30 +8,16 @@ Example
 wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 */
 
-function wave(input){
+function mexicanWave(input){
 	if(typeof input != 'undefined'){
 	var obj ={
 		str:input,
 		wave: function (){
 			var result = [];
-			var megaResult = [];
-			var splitarr = this.str.split('');
-			var temp = 0;
-			
-			while(temp < this.str.length){
-				for(var j = 0; j < temp; j++){
-					result.push(splitarr[j]);
-				}
-				
-				result.push(splitarr[temp].toUpperCase());
-				result = result.join('') + this.str.slice(temp + 1);
-				
-				megaResult.push(result);
-				
-				result = [];
-				temp ++
+			for(var i =0; i < this.str.length; i++){
+				result.push(this.str.substr(0,i) + this.str[i].toUpperCase() + this.str.slice(i+1))
 			}
-			return megaResult
+			return result
 		}
 	} 
 	return obj.wave()
