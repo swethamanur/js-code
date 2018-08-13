@@ -35,4 +35,6 @@ function highlightLandmarks(sentence,arr){
 	return sentence
 }
 
-console.log(highlightLandmarks(sentence,arr));
+
+
+console.log(makeBold(sentence,arr));
