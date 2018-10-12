@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BookList</title>
+    </head>
+    <body>
+        <div id="app">
+                <h2> My Book List </h2>
+                <ul id="books">
+                
+                </ul>
+        
+        <script>
+            var books = [
+                {title: 'The Design of EveryDay Things',
+                author: 'Don Norman',
+                alreadyRead: false
+                },
+                {title: 'The Most Human Human',
+                author: 'Brian Christian',
+                alreadyRead: true
+                }];
+
+            let booksHandle = document.getElementById('books');
+            let appHandle = document.getElementById('app');
+
+            books.forEach((book) => {
+                let li = document.createElement('li');
+            let style = document.createAttribute('style');
+            if(book.alreadyRead){
+            color = 'blue';
+            }else{
+            color = 'red';
+            }
+            
+            style.value = `background-color:${color}`
+            
+            li.setAttributeNode(style);
+            
+            let text = document.createTextNode(`${book.title}-${book.author}`);
+            
+            li.appendChild(text);
+            booksHandle.appendChild(li);
+})
+            appHandle.appendChild(booksHandle);
+        </script>
+    </body>
+</div>
+</html>
+

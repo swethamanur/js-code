@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+        <h2> Places to Visit </h2>
+        <h2 id="output"></h2>
+        <ol id="list">
+          
+        </ol>
+
+    <script>
+        let outputHandle = document.getElementById('output');
+        let listHandle = document.getElementById('list');
+
+        let places = ['NewYork','San Diego','Las Vegas','Los Angeles','Washington'];
+
+        for(var i = 0; i < places.length; i++){
+           let li = document.createElement('li');
+           let textPlace = document.createTextNode(places[i]);
+           li.appendChild(textPlace);
+            
+           //defining click function on each li
+           li.addEventListener('click',function(){
+               outputHandle.innerHTML = li.innerHTML;
+           },false);
+
+           listHandle.appendChild(li);
+
+
+        }
+
+
+        
+
+
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mountains</title>
+    </head>
+    <body>
+        <h1>Mountains</h1>
+        <div id="mountains">
+
+        <table id="table" style="text-align: right" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Height</th>
+                    <th>Place</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <script>
+            let mountainsHandle = document.getElementById('mountains');
+            let tableHandle = document.getElementById('table');
+
+            const MOUNTAINS = [
+                {name: 'Kilimanjaro', height: 5895, place: 'Tanzania'},
+                {name: 'Everest', height: 8848, place: 'Nepal'},
+                {name: 'Mount Fuji', height: 3776, place: 'Japan'},
+                {name: 'Mont Blanc', height: 4808, place: 'Italy/France'}
+            ];
+            
+            MOUNTAINS.forEach((mountain) => {
+                let tr = document.createElement('tr');
+                
+                let tdName = document.createElement('td');
+                let textName = document.createTextNode(mountain.name);
+                tdName.appendChild(textName);
+                tr.appendChild(tdName);
+
+                let tdHeight = document.createElement('td');
+                let textHeight = document.createTextNode(mountain.height);
+                tdHeight.appendChild(textHeight);
+                tr.appendChild(tdHeight);
+
+                let tdPlace = document.createElement('td');
+                let textPlace = document.createTextNode(mountain.place);
+                tdPlace.appendChild(textPlace);
+                tr.appendChild(tdPlace);
+                
+                tableHandle.appendChild(tr);
+                mountainsHandle.appendChild(tableHandle);
+
+
+            })
+        
+        </script>
+    </body>
+</div>
+</html>

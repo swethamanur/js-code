@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+            <label> Enter Text </label>
+            <input type="text" id="text"/> <br/> 
+            <select id="tag"> 
+                <option value=""> Select Tag </option>
+                <option value="h1"> h1 </option>
+                <option value="h2"> h2 </option>
+                <option value="p"> p </option>
+                <option value="b"> b </option>
+                <option value="em"> em </option>
+            </select>
+            <button id="btn"> Generate </button> 
+            <div id="output">
+            </div>
+        <script>
+            let textHandle = document.getElementById('text');
+            let tagHandle = document.getElementById('tag');
+            let outputHandle = document.getElementById('output');
+            let btnHandle = document.getElementById('btn');
+            
+           btnHandle.addEventListener('click',function(){
+            let htmlTag = document.createElement(tagHandle.value);
+            let textTag = document.createTextNode(textHandle.value);
+            
+            (outputHandle.appendChild(htmlTag)).appendChild(textTag);
+
+           },false);
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gender Determination</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2> Gender Form </h2>
+            <form id="genderForm">
+                <label> Name </label>
+                <input type="text" name="name" id="name" /> <br/>            
+                <input type="submit" value="Determine Gender" /><br/>
+                <p id="output"></p>
+            </form>
+        
+            <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+        <script>
+            let genderFormHandle = document.getElementById('genderForm');
+            let nameHandle = document.getElementById('name');
+            let outputHandle = document.getElementById('output');
+
+            genderFormHandle.addEventListener('submit',function(){
+            const url = `https://gender-api.com/get?name=${nameHandle.value}&key=zLlqfmevksufmdPpQX`;
+            axios.get(url).then((response) => {
+            let output = response.data;
+            console.log(output);
+            if(output.gender == 'male'){
+            outputHandle.innerHTML = 'Male';
+            }else{
+            outputHandle.innerHTML = 'Female';
+            }
+            })	
+            },false);
+        </script>     
+        </div>
+    </body>
+</html>

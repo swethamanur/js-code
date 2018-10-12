@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WordCount</title>
+    </head>
+    <body>
+        <div id="app"> 
+            <textarea id="area"> </textarea>
+            <p>You have written <b id="words">0 words</b> and <b id="characters">0 characters</b></p>
+
+        <script>
+            let appHandle = document.getElementById('app');
+            let areaHandle = document.getElementById('area');
+            let wordsHandle = document.getElementById('words');
+            let charactersHandle = document.getElementById('characters');
+
+            
+
+            areaHandle.addEventListener('blur',function(){
+                //keycode 13 means it is Enter key
+            
+                let result = areaHandle.value;
+                let words = result.split(' ');
+                wordsHandle.innerHTML = `${words.length} words`;
+
+                let characters = result.split('');
+                charactersHandle.innerHTML = `${characters.length} characters`;
+                    
+            
+                
+            },false);
+
+
+            areaHandle.addEventListener('focus',function(){
+                areaHandle.value = '';
+                wordsHandle.innerHTML = `0 words`;
+                charactersHandle.innerHTML = `0 characters`;
+            },false);
+            
+        </script>
+
+
+
+        </div>
+    </body>
+</html>

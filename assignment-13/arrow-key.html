@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrow Keys</title>
+    </head>
+    <body>  
+            <div id=my_msg></div>
+            <script language='JavaScript' type='text/JavaScript'>
+                
+                function disp(str){
+                //alert(str);
+                document.getElementById('my_msg').innerHTML=str;
+                }
+                document.onkeydown = function(event) {
+                    switch (event.keyCode) {
+                        case 37:
+                         disp('Left key is pressed') // execute a function by passing parameter 
+                         break;
+                        case 38:
+                         disp('Up  key is pressed') 
+                         break;
+                        case 39:
+                        disp('Right key is pressed') 
+                         break;
+                        case 40:
+                        disp('Down key is pressed')  
+                        break;
+                    }
+                };
+                
+                
+                //-->
+                </script>
+    </body>
+</html>
